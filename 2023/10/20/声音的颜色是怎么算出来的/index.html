@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="声音也有颜色吗？当手机播放一首音乐，我们可以轻易地听出乐曲由何种乐器演奏。因为不同乐器的音色（tone colour）是不同的，所以即使演奏同样的旋律，我们也能分辨出钢琴和吉他的区别。本质上，手机的储存器里只有“0”和“1”而已，并没有藏着真的吉他和钢琴。只有搞清楚声音的本质，我们才能实现通过手机欣赏音乐。揭开“音色”奥秘、让我们可以通过手机欣赏交响乐的其实不是音乐家，而是科学家。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="声音的颜色是怎么算出来的">
+<meta property="og:url" content="http://example.com/2023/10/20/%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF%E6%80%8E%E4%B9%88%E7%AE%97%E5%87%BA%E6%9D%A5%E7%9A%84/index.html">
+<meta property="og:site_name" content="朱老师的杂货铺">
+<meta property="og:description" content="声音也有颜色吗？当手机播放一首音乐，我们可以轻易地听出乐曲由何种乐器演奏。因为不同乐器的音色（tone colour）是不同的，所以即使演奏同样的旋律，我们也能分辨出钢琴和吉他的区别。本质上，手机的储存器里只有“0”和“1”而已，并没有藏着真的吉他和钢琴。只有搞清楚声音的本质，我们才能实现通过手机欣赏音乐。揭开“音色”奥秘、让我们可以通过手机欣赏交响乐的其实不是音乐家，而是科学家。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/iimage_music-by-the-numbers.png">
+<meta property="og:image" content="http://example.com/images/image_%E5%A4%A9%E4%BD%93%E9%9F%B3%E4%B9%90.jpeg">
+<meta property="og:image" content="http://example.com/images/image_%E5%85%8B%E6%8B%89%E5%B0%BC%E8%8A%B1%E7%BA%B9.png">
+<meta property="og:image" content="http://example.com/images/image_%E6%AC%A7%E5%A7%86.png">
+<meta property="article:published_time" content="2023-10-20T12:16:30.000Z">
+<meta property="article:modified_time" content="2023-10-20T12:31:41.707Z">
+<meta property="article:author" content="爱折腾的朱老师">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/iimage_music-by-the-numbers.png">
+
+
+<link rel="canonical" href="http://example.com/2023/10/20/%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF%E6%80%8E%E4%B9%88%E7%AE%97%E5%87%BA%E6%9D%A5%E7%9A%84/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/10/20/%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF%E6%80%8E%E4%B9%88%E7%AE%97%E5%87%BA%E6%9D%A5%E7%9A%84/","path":"2023/10/20/声音的颜色是怎么算出来的/","title":"声音的颜色是怎么算出来的"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>声音的颜色是怎么算出来的 | 朱老师的杂货铺</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">朱老师的杂货铺</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">尻为轮 梦为马</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF%E7%AE%97%E5%87%BA%E6%9D%A5%E7%9A%84-%E4%BF%AE%E8%AE%A2%E7%89%88"><span class="nav-number">1.</span> <span class="nav-text">声音的颜色是算出来的 修订版</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">爱折腾的朱老师</p>
+  <div class="site-description" itemprop="description">个人学习搭建个人博客用</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/20/%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF%E6%80%8E%E4%B9%88%E7%AE%97%E5%87%BA%E6%9D%A5%E7%9A%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="爱折腾的朱老师">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朱老师的杂货铺">
+      <meta itemprop="description" content="个人学习搭建个人博客用">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="声音的颜色是怎么算出来的 | 朱老师的杂货铺">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          声音的颜色是怎么算出来的
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-10-20 20:16:30 / 修改时间：20:31:41" itemprop="dateCreated datePublished" datetime="2023-10-20T20:16:30+08:00">2023-10-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>声音也有颜色吗？当手机播放一首音乐，我们可以轻易地听出乐曲由何种乐器演奏。因为不同乐器的音色（tone colour）是不同的，所以即使演奏同样的旋律，我们也能分辨出钢琴和吉他的区别。本质上，手机的储存器里只有“0”和“1”而已，并没有藏着真的吉他和钢琴。只有搞清楚声音的本质，我们才能实现通过手机欣赏音乐。揭开“音色”奥秘、让我们可以通过手机欣赏交响乐的其实不是音乐家，而是科学家。</p>
+<span id="more"></span>
+<h1 id="声音的颜色是算出来的-修订版"><a href="#声音的颜色是算出来的-修订版" class="headerlink" title="声音的颜色是算出来的 修订版"></a>声音的颜色是算出来的 修订版</h1><p><strong>声音的颜色是算出来的</strong></p>
+<p>声音也有颜色吗？当手机播放一首音乐，我们可以轻易地听出乐曲由何种乐器演奏。因为不同乐器的音色（tone colour）是不同的，所以即使演奏同样的旋律，我们也能分辨出钢琴和吉他的区别。本质上，手机的储存器里只有“0”和“1”而已，并没有藏着真的吉他和钢琴。只有搞清楚声音的本质，我们才能实现通过手机欣赏音乐。揭开“音色”奥秘、让我们可以通过手机欣赏交响乐的其实不是音乐家，而是科学家。</p>
+<p>最早将颜色和声音联系起来的可能是牛顿。1672年，他在皇家学会上发表了《光和色的新理论》。在这篇论文中他提出了光谱（Spectrum）的概念。基于一系列实验，牛顿提出了他的光学理论，如《光学》第一编开头所说“我的计划不是用假设来解释光的性质，而是用推理和实验来提出和证明它们。”他将日光透过三棱镜折射出彩虹一样的光带称为光谱，并将光谱分为七个部分，就是我们现在说的七色光。但实际上，光谱的变化是连续渐变的，分为七个部分完全是牛顿人为的划分。因为七这个数字太妙了，音阶上有七个音符、一周有七天、天上有日、月、金、木、水、火、土、七种重要的天体，上帝为什么就不能将颜色分为七种呢？他甚至以多利安音阶为参照创作了靛蓝色（indigo），并且将橘黄色和深紫色安插在半音的位置。牛顿对和声学的研究不是出于音乐本身，据说他唯一一次听歌剧，到第三幕就逃之夭夭了。他对不同音高所对应弦长之间的比例更感兴趣。这种对数值比例的迷恋以及对宇宙和谐的信仰可以说直承古希腊毕达哥拉斯。</p>
+<p>著名作曲家伊戈尔·斯特拉文斯基曾经慨叹，“虽然我一生都靠声音过活，但从学术观点来看，我甚至根本不了解声音到底是什么东西。我曾经尝试过阅读瑞利的《声学理论》，却没办法从数学的角度弄懂那些最简单的解释。”从毕达哥拉斯到瑞利勋爵的《声学理论》，人类用了两千多年的时间才搞懂声音的本质。有一本书，讲述了历史上音乐和数学及科学之间的亲密关系。</p>
+<p>这本书叫做《音乐是怎样算成的》，副标题为“从毕达哥拉斯到勋伯格，一本看尽音乐与数学的爱恨情仇”，由北京联合出版社于2021年1月出版。其英文书名和副标题分别为“Music by the Numbers: From Pythagoras to Schoenberg，How music has influenced mathematics, physics, and astronomy from ancient Greece to the twentieth century”。作者Eli Maor曾经是芝加哥洛约拉大学一位热爱音乐的数学史教授。全书十二章，前六章讲述了历代科学家对音乐秘密的探索过程。</p>
+<p><img src="/images/iimage_music-by-the-numbers.png" alt="book-music by the numbers"></p>
+<p>我们所知最先对音乐进行量化研究的人是古希腊的毕达哥拉斯。他通过实验发现，发出和谐音符的单弦琴（monochord），其弦长比例为正整数。弦长比例为1:2的两音听起来最和谐，用现在的术语来说，就是两音音程关系为八度。弦长比例为2:3和3:4的两个音听起来也很和谐，它们之间的音程关系分别为五度和四度。毕达哥拉斯称这三种音程关系为“完全协和”。现代乐理中叫这几组音程关系为纯八度、纯四度、纯五度。毕达哥拉斯相信“数字统治宇宙”，他和他的信徒坚信，无论是天体还是音乐，世间万物都受数及其比例所支配。而他的研究是将数学定律应用于音乐领域的首次尝试。</p>
+<p>开普勒也许是最后一代“毕达哥拉斯主义者”之一，他同时也是一位神秘主义者。一生的大部分时间都在通过和声理论来推导行星的轨道，他认为太阳系的每颗行星都谱写着一首天体旋律，这些旋律组合成一首和谐的复调音乐。1599年，开普勒把他《宇宙的奥秘》寄给刚到布拉格的第谷，受到赏识，成为了他的助手。一年多之后第谷去世，开普勒利用第谷留下的数据继续研究行星运动的规律，最终提出了“开普勒三定律”。1619年，开普勒出版了《世界的和谐》（Harmonice Mundi）一书。这本书里包含大量的乐谱，不仔细看会以为是一本讲音乐的书，但这本书是现代天文学的开山之作。他说在重建天体运行规律的繁重工作中阅读托勒密的《和声学》增强了他对这项工作的兴趣和热情。“在我见到托勒密‘天体和谐’前很久，我就坚定相信宇宙的和谐。22年前，当我发现天体轨道之中的5种正多面体时，我就更加肯定天体一定是和谐的，我还对我的朋友们许诺，一定要找到这种和谐。”</p>
+<p><img src="/images/image_%E5%A4%A9%E4%BD%93%E9%9F%B3%E4%B9%90.jpeg" alt="天体音乐"></p>
+<p>大调音阶（Cantus duri）中的音与行星极运动的对应关系（《世界的和谐》第五章）</p>
+<p>在开普勒将和声学应用于天文学研究的那个时代，别的科学家也从不同的方向探索着声音的秘密，伽利略就是其中一位。他在用凿子刮去铜板上污点时候偶然听到凿子和铜板摩擦发出的清晰哨音，并且发现刮痕平行等距地排列着。随着刮擦速度的快慢，哨音的音调也会升高和降低，他意识到划痕的疏密可以衡量凿子震动的快慢。他还发现音程为纯五度的两个哨音对应的刻痕分别为45格和30格，比例正好为4:3。伽利略不仅从凿子的刻痕来考察震动的频率，还用他发现的单摆运动来类比。《关于两种新科学的对话》曾谈到机械振动原理和音乐的关系。周期之比为2:1的摆，较长的摆完成一次运动，较短的摆刚好完成两次，它们会恢复到同样的高度。这样在视觉上就很和谐，八度音的弦长比也正好就是2:1。同理，周期比为3:2的摆（五度），两摆则分别会在完成三次和两次摆动之时恢复到同样的位置，在视觉上也很和谐……周期比值较复杂的摆同时摆动时，在视觉上就显得杂乱无章，这种比例下的琴弦发出的音也不和谐。所以他认为“眼睛和耳朵共享一样的游戏规则”。意大利语“频率”（frequenza）第一次在印刷品中出现，也许就是在伽利略的书中。</p>
+<p>得益于良好的家教，伽利略能够敏锐地听出哨音音调之间的关系。因为他的父亲温琴佐·伽利略（Vincenzo Glilei,1520-1591）就是一名音乐家，擅长演奏鲁特琴，并且发现了琴弦振动的音高与其所受张力的平方根成正比这一规律。马兰·梅森（Marin Mersenme,1588-1648）是第一个对各音符频率进行实质测量的人，他还第一次测量了声音的速度。没错，就是“梅森素数”那个梅森，这位自学成才的修道士出版了两部关于音乐的著作：《和谐之书》和《宇宙的和谐：关于乐器的书》。先天具有语言和听力障碍的约瑟夫·索弗尔（Joseph Sauveur,1653-1716）也对音高与振动频率的关系感兴趣，他创造了”声学”（acoustics）一词，提出了音级（steps）概念。他听力不好，却通过观察放在琴弦上的纸片来研究琴弦的震动。他发现弦的不同部分在振动时彼此独立，就像被分割成独立的片段。整条琴弦的振动频率为最低的“基频”，那些独立部分的振动频率为基频的整数倍。每一个频率都产生特定的音符，他将其称之为“谐音”（harmonic tones），也就是“泛音”。这一系列音符称为“泛音列”（harmonic series），后来人们才知道，泛音列的不同响度决定了音色。</p>
+<p>差不多同一时代，莱布尼兹和牛顿各自独立创立了微积分理论。微积分的出现改变了科学家的思考方式，破解了几个世纪以来一直困扰着人们的大量问题，也包括弦振动的问题。英国数学家泰勒（Brook Taylor1685-1731）就是“泰勒级数”的泰勒，1715年发表了一篇关于弦振动的论文，这篇论文是丹尼尔·伯努利1755年关于弦振动论文的前奏。18世纪欧洲数学界的精英们围绕弦的振动问题发表了大量论文、演讲、通信。其中包括约翰·伯努利、丹尼尔·伯努利、欧拉、达朗贝尔、拉格朗日这些曾经让你头疼的数学家。他们中也许只有欧拉会基于艺术性而对音乐感兴趣，其他人更喜欢的是“数学音乐”，他们是毕达哥拉斯的精神后裔，将对数值和比例的痴迷推到了新的高度。</p>
+<p>这些数学家之间的争论对微积分之后的数学发展产生了影响，探索了应对连续介质问题的数学技术，一维琴弦的振动是所有问题中最简单的。达朗贝尔在用微积分研究弦振动时采用了“偏导数”概念，得到了一个偏微分方程，他和丹尼尔·伯努利被称为偏微分方程的奠基者。此后的科学家继续研究了二维的膜、空气柱、钟、梁等各种物体的振动。克拉尼（Ernst Chladni，1756-1827）仔细研究了琴弓摩擦玻璃板时上面的细沙形成的花纹。法国女数学家热尔曼（Sophie Germain,1776-1831）写出了薄板振动的方程，解释了“克拉尼花纹”并因此赢得了科学院的悬赏。弹性薄板问题最终被基尔霍夫在1850年解决。泊松得到了膜振动方程，亥姆霍兹推广了柏松膜振动方程。1862年亥姆霍兹出版了《关于作为音乐理论生理基础的音调感觉》，这本书是现代音乐生理学和音乐心理学的奠基之作。1888年，瑞利勋爵（就是那个“瑞利－金斯公式”那个瑞利）出版了《声学理论》，总结了那个时代声学和振动理论的主要成果，也就是让作曲家斯特拉文斯基看不懂的那本书。</p>
+<p><img src="/images/image_%E5%85%8B%E6%8B%89%E5%B0%BC%E8%8A%B1%E7%BA%B9.png" alt="克拉尼花纹Chladni figures"></p>
+<p>谁能想到傅立叶在研究热在固体中的传导中提出的傅立叶定律可以被用到声学研究中呢。欧姆证明复杂的声波可以分解为谐波分量（纯音），一系列谐波振幅的大小决定了音色。在欧姆声学理论的启发下，人们开展了听觉的声学研究（生理声学和心理声学），并取得了重要的成果，其中最有名的研究者是亥姆霍兹。亥姆霍兹是一位科学通才，“热力学第一定律”就是他提出来的，他还在数学、声学、生理学方面作出了重要贡献。他探测了人类听觉的频率下限——30赫兹，低于这个频率的声波被称为次声波。马赫发现人类听觉的频率上限为20000赫兹，超过这个频率的声波称为超声波。亥姆霍兹发明了“亥姆霍兹振子”用以探测特定的频率，这实际上是一种依赖力学原理的滤波器。他还证明了人耳和脑其实是一个频率分析器，组合起来可以做“傅立叶分析”。人耳中含有一组精巧的、功能类似“亥姆霍兹振子”的组织，可以响应不同频率的声波，从而让大脑解析出音高和音色等信息。</p>
+<p><img src="/images/image_%E6%AC%A7%E5%A7%86.png" alt="欧姆（Georg Simon Ohm，1789-1854）"></p>
+<p>牛顿通过折射率定义单色光。他的著作《光学》第六条定义是：“我将光线的可折射性全都一样的光，称为简单的、单色的、相似的光；而将某些光线比其他的更可折射的光，称为复合的、杂色的和非相似的光。”与此类似，科学家通过频率来定义纯音（pure tone），所有声音都由纯音叠加而成。我们现在知道，人耳听到的声音其实不是纯音（pure tone），而是复合音（compound tones）。唯一能够发出接近纯音的物体是音叉，每个音叉有固定的振动频率。但音叉发出的声音比较单调，大部分乐器发出的声音都是复合音，由基波和一系列和谐泛音组成。音调的高低由基波的频率（基频）决定，和谐泛音的振动频率为基频的整数倍。不同泛音响度（振幅）的大小决定了音色。现在使用的国际标准音高将中央C之上的A规定为440赫兹。也就是说，按照国际音高标准定音的钢琴，弹奏出A这个音，其基频为440赫兹。</p>
+<p>欧姆和亥姆霍兹的工作，让我们了解了音色的本质。了解声音的本质之后，科学家就可以像调制鸡尾酒一样制造声音了。实际上科学家就这么做了，亥姆霍兹在1863年就设计了一种电声装置，可以用电磁脉冲驱动音叉发出纯音，特定的一组纯音一起发声，就可以模拟不同乐器的音色以及语音中的元音。可以说，亥姆霍兹是电子乐的先驱，这个装置也是所有电子乐器的原型。现在利用计算机技术可以用电信号模拟出任何乐器，甚至任何人的声音，并且可以调制出自然界从未有过的音色。这些技术的发展不仅推动了乐器的革新、催生了新的音乐风格，还改变了人们对音乐的审美情趣。</p>
+<p>本书的前半部分让我们大致了解科学家是如何一步步揭开音乐秘密的，同时也让我们领略到那些著名科学家的兴趣范围和知识广度以及科学家之间的一些小八卦。与之相比，本书后半部分的章节是几篇独立的小品，相互之间的关系比较松散、主题也比较发散：第六章介绍了音律学知识；第七章讲解了一些比较“奇怪”的音乐作品，比如约翰·凯奇的《4分33秒》和“尽可能慢”；第七章介绍了音叉和节拍器等音乐小工具；第八章讲了节奏与节拍。之后几章大致介绍了音乐思潮体系的变化，以及音乐与艺术形式或科学之间的关系，最终讲到勋伯格等音乐家放弃调性音乐体系。总之，本书读起来轻松有趣，篇幅也不大，只有一百五十多页。可以使读者对音乐和科学及两者之间的关系有更加深入的了解。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/17/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-angle-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">爱折腾的朱老师</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
